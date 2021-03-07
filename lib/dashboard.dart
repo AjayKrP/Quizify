@@ -27,8 +27,7 @@ class Dashboard extends StatelessWidget {
           decoration: BoxDecoration(
               border: Border.all(color: color),
               shape: BoxShape.circle,
-              color: color
-          ),
+              color: color),
           child: Icon(
             icon,
             color: Colors.white,
@@ -45,16 +44,10 @@ class Dashboard extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            height: MediaQuery
-                .of(context)
-                .size
-                .height,
+            height: MediaQuery.of(context).size.height,
           ),
           Container(
-            height: MediaQuery
-                .of(context)
-                .size
-                .height / 2,
+            height: MediaQuery.of(context).size.height / 2,
             decoration: BoxDecoration(
                 color: Colors.teal,
                 borderRadius: BorderRadius.only(
@@ -65,10 +58,7 @@ class Dashboard extends StatelessWidget {
           Positioned(
             left: 20.0,
             right: 20.0,
-            top: MediaQuery
-                .of(context)
-                .size
-                .height / 2 - 100,
+            top: MediaQuery.of(context).size.height / 2 - 100,
             child: Container(
               height: 200.0,
               decoration: BoxDecoration(
@@ -117,14 +107,16 @@ class Dashboard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       _iconButton('Play Again', Icons.refresh, Colors.blue),
-                      _iconButton('Review Answer', Icons.remove_red_eye, Colors.blue),
+                      _iconButton(
+                          'Review Answer', Icons.remove_red_eye, Colors.blue),
                       _iconButton('Share Score', Icons.share, Colors.teal),
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      _iconButton('Generate PDF', Icons.description, Colors.blue),
+                      _iconButton(
+                          'Generate PDF', Icons.description, Colors.blue),
                       _iconButton('Home', Icons.home, Colors.blue),
                       _iconButton('LeaderBoard', Icons.assessment, Colors.blue),
                     ],
@@ -132,7 +124,83 @@ class Dashboard extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
+          Positioned(
+            left: 50.0,
+            right: 50.0,
+            top: 50.0,
+            child: Container(
+              height: 200,
+              decoration:
+                  BoxDecoration(shape: BoxShape.circle, color: Colors.white30),
+            ),
+          ),
+          Positioned(
+            left: 50.0,
+            right: 50.0,
+            top: 60.0,
+            child: Container(
+              height: 180,
+              decoration:
+                  BoxDecoration(shape: BoxShape.circle, color: Colors.white30),
+            ),
+          ),
+          Positioned(
+            left: 50.0,
+            right: 50.0,
+            top: 70.0,
+            child: Container(
+              height: 160,
+              decoration:
+                  BoxDecoration(shape: BoxShape.circle, color: Colors.white30),
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 24.0,
+                      ),
+                      Text(
+                        'Your Score',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 22.0,
+                          color: Colors.teal,
+                        ),
+                      ),
+                      RichText(
+                        text: TextSpan(children: [
+                          TextSpan(
+                            text: '150',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 32.0,
+                                color: Colors.teal),
+                          ),
+                          WidgetSpan(
+                            child: Transform.translate(
+                              offset: const Offset(2, 4),
+                              child: Text(
+                                'pt',
+                                //superscript is usually smaller in size
+                                textScaleFactor: 0.7,
+                                style: TextStyle(
+                                  fontSize: 22.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.teal,
+                                ),
+                              ),
+                            ),
+                          )
+                        ]),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
