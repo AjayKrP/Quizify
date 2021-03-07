@@ -1,6 +1,6 @@
 # Quizify
 
-It's a Quiz App Build in Flutter. I'm not adding any backend functionality for now but complete Ui functionality is ready. DM me for the backend functionality.
+It's a Quiz App Build. I'm not adding any backend functionality for now but complete Ui functionality is ready. DM me for the backend functionality.
 
 Design i followed 
 
