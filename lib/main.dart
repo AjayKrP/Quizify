@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quizify/dashboard.dart';
 
 void main() {
   runApp(MyApp());
@@ -45,11 +46,19 @@ class _MyHomePageState extends State<MyHomePage> {
     ];
     return Padding(
       padding: EdgeInsets.all(5.0),
-      child: Container(
-        width: 50.0,
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: left ? _items : _items.reversed.toList()),
+      child: InkWell(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Dashboard()),
+          );
+        },
+        child: Container(
+          width: 50.0,
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: left ? _items : _items.reversed.toList()),
+        ),
       ),
     );
   }
@@ -57,42 +66,47 @@ class _MyHomePageState extends State<MyHomePage> {
   _optionButton(String value, {Color borderColor=Colors.black38, IconData optionIcon}) {
     return Padding(
       padding: EdgeInsets.all(4.0),
-      child: Container(
-        height: 50.0,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.all(
-            Radius.circular(10.0),
+      child: InkWell(
+        onTap: (){
+          print('option presses');
+        },
+        child: Container(
+          height: 50.0,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(
+              Radius.circular(10.0),
+            ),
+            border: Border.all(color: borderColor),
           ),
-          border: Border.all(color: borderColor),
-        ),
-        child: Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                value,
-                style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              Container(
-                width: 15,
-                height: 15,
-                decoration: BoxDecoration(
-                  border: Border.all(color: borderColor),
-                  shape: BoxShape.circle,
-                  color: optionIcon != null ? borderColor : Colors.white
-                ),
-                child: optionIcon != null ? FittedBox(
-                  fit: BoxFit.fill,
-                  child: Icon(
-                    optionIcon,
+          child: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  value,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
                   ),
-                ) : Container(),
-              ),
-            ],
+                ),
+                Container(
+                  width: 15,
+                  height: 15,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: borderColor),
+                    shape: BoxShape.circle,
+                    color: optionIcon != null ? borderColor : Colors.white
+                  ),
+                  child: optionIcon != null ? FittedBox(
+                    fit: BoxFit.fill,
+                    child: Icon(
+                      optionIcon,
+                    ),
+                  ) : Container(),
+                ),
+              ],
+            ),
           ),
         ),
       ),
