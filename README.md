@@ -9,5 +9,5 @@ Design i followed
 #### Todo List
 - [x] Question Detail Page Design
 - [ ] Leader Board Design
-- [ ] Score Board Design
+- [x] Score Board Design
 - [ ] Home Page Design
