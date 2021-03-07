@@ -1,16 +1,13 @@
-# quizify
+# Quizify
 
-A new Flutter application.
+It's a Quiz App Build in Flutter. I'm not adding any backend functionality for now but complete Ui functionality is ready. DM me for the backend functionality.
 
-## Getting Started
+Design i followed 
 
-This project is a starting point for a Flutter application.
+!['App Design Image'](./assets/Quiz1.png)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### Todo List
+- [x] Question Detail Page Design
+- [ ] Leader Board Design
+- [ ] Score Board Design
+- [ ] Home Page Design
